@@ -51,6 +51,9 @@ jobs:
           enablement: true
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Clone Hugo PaperMod theme
+        run: |
+          git clone https://github.com/adityatelange/hugo-PaperMod.git themes/hugo-PaperMod
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
