@@ -45,6 +45,7 @@ jobs:
 
       - name: Setup Theme
         run: |
+          git rm -rf --cached themes/hugo-PaperMod
           rm -rf themes/hugo-PaperMod
           git submodule add -f https://github.com/adityatelange/hugo-PaperMod.git themes/hugo-PaperMod
           git submodule update --init --recursive
